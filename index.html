@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指尖书写 (Finger Tip Writing)</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- MediaPipe Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>指尖书写</h1>
+            <p>举起你的手，用食指在空中书写</p>
+        </header>
+        
+        <div class="canvas-container">
+            <!-- 摄像头画面 -->
+            <video class="input_video" playsinline></video>
+            <!-- 绘制画布 -->
+            <canvas class="output_canvas"></canvas>
+            <!-- 加载指示器 -->
+            <div class="loading-overlay" id="loading">
+                <div class="spinner"></div>
+                <p>正在加载模型...</p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="color-picker">颜色</label>
+                <input type="color" id="color-picker" value="#00FF00">
+            </div>
+            
+            <div class="control-group">
+                <label for="line-width">笔触粗细</label>
+                <input type="range" id="line-width" min="1" max="20" value="5">
+            </div>
+            
+            <div class="control-group">
+                <label for="sensitivity">灵敏度 (左高右低)</label>
+                <input type="range" id="sensitivity" min="0.2" max="0.8" step="0.1" value="0.5">
+            </div>
+
+            <div class="divider"></div>
+
+            <button id="clear-btn" class="btn primary">清除画布</button>
+            <button id="toggle-camera-btn" class="btn secondary">暂停/开启摄像头</button>
+            
+            <div class="divider"></div>
+
+            <button id="record-btn" class="btn record">开始录制</button>
+            <button id="save-btn" class="btn save">保存截图</button>
+        </div>
+        
+        <div class="guide-tip">
+            提示：捏合食指和拇指即可开始书写，松开停止
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
