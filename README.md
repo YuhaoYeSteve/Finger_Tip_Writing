@@ -105,6 +105,9 @@ npx http-server .
 *   📹 **创作记录**：新增 Canvas 录屏 (WebM) 和截图 (PNG) 导出功能。
 *   〰️ **体验升级**：引入指数移动平均 (EMA) 算法，笔迹更加平滑圆润。
 
+### v1.0 (2026-02-19)
+*   🌱 **项目诞生**：基于 MediaPipe Hands 实现基础的指尖追踪与书写功能。
+
 ## 📄 License
 
 MIT License
