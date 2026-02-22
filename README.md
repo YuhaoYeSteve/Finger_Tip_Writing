@@ -8,6 +8,9 @@
 
 <div align="center">
   <img src="demo.gif" width="100%" alt="指尖书写演示" />
+  <br/>
+  <br/>
+  <img src="demo.png" width="100%" alt="指尖书写截图" />
 </div>
 
 ## 🌟 核心功能
